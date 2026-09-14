@@ -1,0 +1,16 @@
+<nav>
+    
+    
+    <% if (user){ %>
+    <a href="/auth/sign-out">Logout</a>
+    <a href="/">Homepage</a>  
+    <!-- we move the homepage link within the if statement
+        so that it only shows for user who is signed in -->
+
+    <% } else{ %>
+    <a href="/auth/sign-up">Sign up</a>
+    <a href="/auth/sign-in">Login</a>
+
+    <% } %>
+    
+</nav>
