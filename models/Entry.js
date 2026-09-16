@@ -8,9 +8,12 @@ const entrySchema = new mongoose.Schema({
     },
     entryBody: {
         type: String,
-        isPublic: Boolean,
-        default: false
+        maxLength: 350
     },
+    isPublic: {
+        type: Boolean,
+        default: false
+    },    
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

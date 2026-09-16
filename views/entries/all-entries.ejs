@@ -7,7 +7,13 @@
 </head>
 <body>
 
-        
+    <h1>All Entries</h1>
+
+    <% for( oneEntry of entries ) { %>
+        <p>Listing at: <%= oneEntry.title %></p>
+        <a href="/listings/<%= oneEntry._id %>">See Details</a>
+
+    <% } %>
     
 </body>
 </html>
