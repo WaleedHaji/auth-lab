@@ -9,24 +9,24 @@
 
      <%- include('../partials/navbar') %>
 
-    <h1>Create New Entry Page</h1>
+    <h1>Update Entry</h1>
 
-    <form action="/entries" method="post">
+    <form action="/entries/<%= entry._id %>?_method=PUT" method="post">
 
         <label for="titleInput">Title:</label>
-        <input id="titleInput" name="title" type="text">
+        <input value="<%= entry.title %>" id="titleInput" name="title" type="text">
 
         <br>
 
         <label for="entryBodyInput">Entry Body:</label>
-        <input id="entryBodyInput" name="entryBody" type="text" style="width: 350px; height: 45px;">
+        <input value="<%= entry.entryBody %>" id="entryBodyInput" name="entryBody" type="text" style="width: 350px; height: 45px;">
 
         <br>
 
         <label for="isPublicInput">Is Public:</label>
-        <input id="isPublicInput" name="isPublic" type="checkbox">
+        <input value="<%= entry.isPublic %>" id="isPublicInput" name="isPublic" type="checkbox">
         
-        <button>Create Entry</button>
+        <button>Update Entry</button>
 
     </form>
 

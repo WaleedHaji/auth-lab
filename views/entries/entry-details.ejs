@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Entry Details</h1>
+
+    <h2>Title: <%= entry.title %></h2>
+    <p>Entry: <%= entry.entryBody %></p>
+    <p>Public: <%= entry.isPublic %></p>
+    <h3>By: <%= entry.owner.username %></h3>
+
+    <% if(entry.owner._id.equals(user._id)) {%>
+    <form action="/entries/<%= entry._id %>?_method=DELETE" method="post">
+        <button>Delete Entry</button>
+    </form>
+
+    <a href="/entries/<%= entry._id %>/edit">Edit Entry</a>
+    <% } %>
+    
+</body>
+</html>

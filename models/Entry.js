@@ -13,7 +13,11 @@ const entrySchema = new mongoose.Schema({
     isPublic: {
         type: Boolean,
         default: false
-    },    
+    },
+    isDeleted:{
+      type: Boolean,
+      default: false
+    }, 
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
